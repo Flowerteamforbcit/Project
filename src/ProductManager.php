@@ -56,6 +56,12 @@ class ProductManager {
         return $rows;
     }
 
+	public function listProductsByOrder($searchres, $orderby) {
+			$sql = "SELECT id, name, price, storeName, storeAddress, googleMap FROM product where name like '%$searchres%' ORDER BY $orderby";
+			$rows = $this->db->query($sql);
+			return $rows;
+	}
+	
     public function findProduct($SKU) {
         $params = array(":sku" => $SKU);
         $sql = "SELECT SKU, item_price, description, path, Quantity FROM product WHERE SKU = :sku";
