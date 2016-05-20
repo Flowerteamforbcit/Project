@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
     <h2>Login</h2>
     <?php
     if(isset($errMsg)){
-        echo '<div style="color:#FF0000;text-align:center;font-size:12px;">'.$errMsg.'</div>';
+        echo '<div style="color:#FF0000;text-align:center;font-size:15px;">'.$errMsg.'</div>';
     }
     ?>
     <form action="" method="post">

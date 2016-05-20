@@ -11,7 +11,6 @@ body {
     line-height: 20px;
 }
 
-
 a {
     color: #1e7ad3;
     text-decoration: none;
@@ -36,7 +35,7 @@ input {
 .search {
     position: relative;
     margin: 0 auto;
-    width:  90%;
+    width:  80%;
     float: left;
 }
 
@@ -117,9 +116,6 @@ input {
 }
 
 
-
-
-
 :-moz-placeholder {
     color: #a7aabc;
     font-weight: 200;
@@ -147,4 +143,14 @@ input {
     right: 5%;
     padding:13px;
 
+
+}
+
+#dropdownSort{
+	float:right;
+}
+
+#dropdownmenu{
+	left:-120px;
+	
 }

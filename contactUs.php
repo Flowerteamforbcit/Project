@@ -13,9 +13,7 @@ include 'header.php';
         <h2>Get In Touch</h2>
         <p>We'd love to hear from you!</p>
         <p>Send us a message using the form below</p>
-        <!--        <p>-->
-        <!--            <a href="mailto:zgp7777@gmail.com">Send Mail</a>-->
-        <!--        </p>-->
+       
         <hr/>
 
         <?php

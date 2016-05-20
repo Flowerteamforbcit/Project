@@ -71,6 +71,12 @@ class ProductManager {
 
 
 
-}
 
+		public function listComments($product_id){
+			$sql = "SELECT email, content FROM comments WHERE product_id = $product_id";
+			
+			$rows = $this->db->query($sql);
+			return $rows;
+		}
+	}
 ?>

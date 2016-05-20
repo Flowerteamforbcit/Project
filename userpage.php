@@ -57,15 +57,15 @@ if(isset($_POST['submit'])){
 <div id="banner">
     <img src="img/logo.jpg"/>
 </div>
-<div class="jumbotron">
+<div class="jumbotron container">
     <h2>Hi <?php echo $_SESSION['userEmail']; ?></h2>
     <p> This page is for editing your account information </p>
     <?php
     if(isset($errMsg)){
-        echo '<div style="color:#FF0000;text-align:center;font-size:12px;">'.$errMsg.'</div>';
+        echo '<div style="color:#FF0000;text-align:center;font-size:15px;">'.$errMsg.'</div>';
     }
     if(isset($successMsg)){
-        echo '<div style="color:#2E2F31;text-align:center;font-size:12px;">'.$successMsg.'</div>';
+        echo '<div style="color:#2E2F31;text-align:center;font-size:15px;">'.$successMsg.'</div>';
     }
     ?>
     <a id="changePW"><h3>Change Password</h3></a>
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])){
 
 
 
-<script type="text/javascript" src="js/userpage.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
 <?php
 include 'footer.php';
 ?>
