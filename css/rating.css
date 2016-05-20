@@ -1,0 +1,199 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Hind);
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20%; }
+h1 { font-size: 1.5em;  }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  position: absolute;
+   top: 130px;  
+   width: 95%; 
+  border: none;
+    margin-left: 200px;
+}
+
+.rating > input { display: none; } 
+ .rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: '★';
+}
+
+.rating > .half:before { 
+  content: '★';
+  position: absolute;
+  
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: left;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+h5 span { 
+  position: absolute;
+   top: 12%; 
+   color: white; 
+   font: bold 200% Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   padding: 0 5px;
+   margin-left: 15px;
+}
+
+h6 span { 
+  position: absolute;
+   top: 60px; 
+   color: white; 
+   font:  16px/16px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   line-height: 125%;
+   padding: 0 5px;
+   margin-left: 15px;
+}
+
+lol7 span { 
+  position: absolute;
+   top: 120px; 
+   color: white; 
+   font:  12px/12px Helvetica, Sans-Serif; 
+   letter-spacing: -1px; 
+	line-height: 125%;
+   padding: 5px 5px 5px 5px;
+   margin-left: 15px;
+}
+
+price span { 
+  position: absolute;
+   top: 50px; 
+   margin-left: 200px;
+   color: white; 
+   font:  56px/56px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   line-height: 125%;
+   padding: 0 5px;
+
+}
+
+ #banner img {
+    width: 100%;
+    height: auto;
+}
+#imageGallery {
+    overflow: hidden;
+    margin: 2%;
+}
+.box {
+    float: left;
+    
+    width: 20%;
+    padding-bottom: 20%;
+}
+
+.boxInner {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    overflow: hidden;
+}
+
+.boxInner img {
+    width: 400px;
+    height: 251px;
+    position: relative;
+}
+
+.boxInner .over{   
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 400px;
+    height: 251px;
+   display: none;
+   color: #FFF;
+   display: block;
+   background: rgba(0, 0, 0, .6);
+
+}    
+
+@media only screen and (max-width : 480px) {
+    /* Smartphone view: 1 tile */
+    .box {
+          height: 250px;
+  }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+    /* Tablet view: 2 tiles */
+    .box {
+           height: 250px;
+
+  }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+    /* Small desktop / ipad view: 3 tiles */
+    .box {
+        height: 250px;
+  }
+}
+@media only screen and (min-width : 1051px) {
+    /* Medium desktop: 4 tiles */
+    .box {
+      height: 250px;
+  }
+}
+
+/* SEARCH */      
+#custom-search-input {
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}    
