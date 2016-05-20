@@ -63,7 +63,7 @@ $(document).ready(function () {
         $.ajax({
             url: "./loadproducts.php",
             type: "POST",
-            
+                //console.log("cart checkout response: ", returnedData);
             data: {form: form[0].value},
             success: function (returnedData) {
                 $("#productslistforhome").html(returnedData);

@@ -29,13 +29,14 @@ $product_info = $results[0];
 <h5>Price: $<?php echo $product_info['price']?></h5>
 <h5>Address: <?php echo $product_info['storeAddress']?></h5>
 		<?php echo $product_info['googleMap']?>
+	</div>
+	<br>
 	<div style="text-align:right">
 		<button class="btn" id="commentbtn"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
 	</div>
 </div>
 
 
-    </div>
 <hr></hr>
 
 <div class="container" id="comments" style="display: none">
