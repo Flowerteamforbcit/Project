@@ -57,7 +57,7 @@ class ProductManager {
     }
 
 	public function listProductsByOrder($searchres, $orderby) {
-			$sql = "SELECT id, name, price, storeName, storeAddress, googleMap FROM product where name like '%$searchres%' ORDER BY $orderby";
+			$sql = "SELECT id, name, price, storeName, storeAddress, googleMap, image FROM product where name like '%$searchres%' ORDER BY $orderby";
 			$rows = $this->db->query($sql);
 			return $rows;
 	}
