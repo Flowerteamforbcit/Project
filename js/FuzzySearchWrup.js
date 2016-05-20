@@ -72,7 +72,7 @@
                     $$(container).empty();
                     
                         Arr.forEach(results, function (result) {
-                            if (number.round(result.score) > 100){
+                            if (number.round(result.score) > 300){
                                 var id = result.value;
                                 zen('li').html('<div id="' + result.value + '" onclick="myFunction(id)"><a>' + result.value + '</a></div>').insert(container);
                             }

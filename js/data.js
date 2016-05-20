@@ -11,8 +11,6 @@
         for (var i = 0; i < data.length; i++) {
         fsData[i] = data[i].name;
     }
-        console.log(fsData);
 //        fsData += data;
     }
 });
-  console.log(fsData);  

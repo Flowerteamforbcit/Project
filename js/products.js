@@ -59,14 +59,12 @@ $(document).ready(function () {
     $( ".search" ).submit(function( event ) {
         var form =   $(".search").serializeArray();
         $('#results').css('display', 'none');
-        console.log(form[0].value);
         $.ajax({
             url: "./loadproducts.php",
             type: "POST",
             
             data: {form: form[0].value},
             success: function (returnedData) {
-                console.log("cart checkout response: ", returnedData);
                 $("#productslistforhome").html(returnedData);
 
             },

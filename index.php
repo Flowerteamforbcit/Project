@@ -43,6 +43,9 @@ if (isset($_SESSION['userEmail'])){
 <!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
 </div>
 </div>
+    <script type='text/javascript' src='js/jquery.min.js'></script>
+    <script type='text/javascript' src='js/jquery.rateyo.min.js'></script>
+    
 
 <?php
 include 'footer.php';
