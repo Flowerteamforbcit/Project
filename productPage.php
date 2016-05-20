@@ -35,78 +35,8 @@ $product_info = $results[0];
 
     
     </div>
-<hr></hr>
-
-<div class="container" id="comments" style="display: none">
-	
-	<h3 class="comments" id="<?php echo $product_id ?>" >Comments</h3>
-	<!-- this place is for loading all comments from database -->
-	<div id="commentlist">
-		<!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
-		<h4><strong>TEST@TEST</strong></h4>
-		<p>example pragraph, blah blah blah</p>
-		<h4><strong>TEST@TEST</strong></h4>
-		<p>example pragraph, blah blah blah example pragraph, blah blah blahexample pragraph, blah blah blahexample pragraph, blah blah blah</p>
-		<h4><strong>TEST@TEST</strong></h4>
-		<p>example pragraph, blah blah blah example pragraph, blah blah blahexample pragraph, blah blah blah</p>
-		<!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
-	</div>
-	<hr>
-	<form method="post" action="">
-		<label>Add comment</label>
-		
-		<!-- this will appear when user is not logged in -->
-		<?php if (!array_key_exists('userEmail', $_SESSION)) echo
-		'<fieldset class="form-group">
-		<input type="email" class="form-control" id="userEmail1" name="userEmail" placeholder="User Email">
-		</fieldset>'
-		?>
-		
-		<fieldset class="form-group">
-			<label id="<?php if(isset($_SESSION['userEmail'])) echo $_SESSION['userEmail']; ?>">
-				<?php if (array_key_exists('userEmail', $_SESSION)) echo $_SESSION['userEmail'];?>
-			</label>
-			<textarea class="form-control" id="textarea" name="textarea" rows="3" placeholder="Say something"></textarea>
-		</fieldset>
-		
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-	<?php
-		# basic pdo connection (with added option for error handling)
-	if ($_SERVER['REQUEST_METHOD'] == "POST") {
-		if (!$_POST['textarea']) {
-			echo "<p>Please supply all of the data! You may press your back button to attempt again minion!</p>";
-			exit;
-		} else {
-			try {
-				$STH = $dbh->prepare("INSERT INTO comments (email, content, product_id) VALUES (:email,:message,:product_id)");
-				if( isset($_POST['userEmail'])){
-					$STH->bindParam(':email', $_POST['userEmail']);
-				}else{
-					$STH->bindParam(':email', $_SESSION['userEmail']);
-				}
-
-				$STH->bindParam(':message', $_POST['textarea']);
-				$STH->bindParam(':product_id', $_GET['id']);
-
-				$STH->execute();
-			} catch (PDOException $e) {
-				echo $e->getMessage();
-			}
-			echo "<p><strong>submitted successfully</strong></p>";
-		}
-	}
-		# close the connection
-	$dbh = null;
-	?>
 </div>
-
-
-
-<script type="text/javascript" src="js/comments.js"></script>
-<script type="text/javascript" src="js/animation.js"></script>
-
 <?php
 
 include 'footer.php';
-?>	
+?>
