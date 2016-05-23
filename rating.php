@@ -2,7 +2,7 @@
 
 require_once('init.php');
 try {
-		$dbh = new PDO('mysql:host=localhost;dbname=test', 'root', 'root', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+		$dbh = new PDO('mysql:host=localhost;dbname=test', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 	} catch(PDOException $e) {
 		echo 'ERROR: ' . $e->getMessage();
 	}

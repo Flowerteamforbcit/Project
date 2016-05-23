@@ -27,52 +27,57 @@ if (isset($_SESSION['userEmail'])){
 		</form>
 
 		
-		<span class="glyphicon glyphicon-question-sign" id='helpmark' aria-hidden="true"></span>
-		<div id="popup" style="display: none"><p>It will provide the result of materials from different companies</P></div>
+			<span class="glyphicon glyphicon-question-sign" id='helpmark' aria-hidden="true"></span>
+			<div id="popup" style="display: none"><p>It will provide the result of materials from different companies</P></div>
 		
 		<div class="dropdown" id="dropdownSort">
 			<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-				<span class="glyphicon glyphicon-sort" aria-hidden="true"></span> 
-
+			  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span> 
+			  
 			</button>
-			<ul class="dropdown-menu" id="dropdownmenu">
-				<li><a href="#" id="Address">Address</a></li>
-				<li><a href="#" id="Price">Price</a></li>
-				<li><a href="#" id="Delivery">Provide delivery</a></li>
-			</ul>
+		  <ul class="dropdown-menu" id="dropdownmenu">
+			<li><a href="#" id="Address">Address</a></li>
+			<li><a href="#" id="Price">Price</a></li>
+			<li><a href="#" id="Delivery">Provide delivery</a></li>
+		  </ul>
 		</div>	
 	</section>
 	
 </div>  
 
 
-
+	 
 
 
 
 <div id="imageGallery">
 
-	<div class="row">
-		<div id="productslistforhome">
-			<!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
+<div class="row">
+<div id="productslistforhome">
+<!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
 
-			<!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
-		</div>
-	</div>
-
+<!-- THIS SECTION WILL BE REPLACED BY SERVER GENERATED ROWS -->
 </div>
-<script type='text/javascript' src='js/jquery.min.js'></script>
-<script type='text/javascript' src='js/jquery.rateyo.min.js'></script>
+</div>
+    <script type='text/javascript' src='js/jquery.min.js'></script>
+    <script type='text/javascript' src='js/jquery.rateyo.min.js'></script>
+    
 
-
-
+	<?php
+	include 'footer.php';
+	?>
 
 <script type="text/javascript" src="js/animation.js"></script>
 <script type="text/javascript" src="js/sorting.js"></script>
 
+<script>
+var e = document.getElementById('parent');
+e.onmouseover = function() {
+  document.getElementById('popup').style.display = 'block';
+}
+e.onmouseout = function() {
+  document.getElementById('popup').style.display = 'none';
+}
+</script>
+ 
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-
-<script src="js/bootstrap-tour.min.js"></script>
-<script src="js/searchPageTour.js"></script>
