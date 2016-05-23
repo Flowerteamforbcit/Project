@@ -61,6 +61,11 @@ class ProductManager {
 			$rows = $this->db->query($sql);
 			return $rows;
 	}
+    public function listDeliveryProducts($searchres) {
+            $sql = "SELECT id, name, price, storeName, storeAddress, googleMap, image FROM product where name like '%$searchres%' AND delivery = 1 ";
+            $rows = $this->db->query($sql);
+            return $rows;
+    }
 	
     public function findProduct($SKU) {
         $params = array(":sku" => $SKU);
@@ -73,9 +78,6 @@ class ProductManager {
 
         return null;
     }
-
-
-
 
 
 		public function listComments($product_id){
