@@ -43,7 +43,7 @@ class ProductManager {
     public function addProduct($SKU, $item_price,  $description, $path, $quantity) {
 
         $sql = "INSERT INTO product (SKU, item_price, description, path, Quantity)
-            VALUES ('$SKU', '$item_price',  '$description', '$path', '$quantity')";
+        VALUES ('$SKU', '$item_price',  '$description', '$path', '$quantity')";
         $affectedRows = $this->db->affectRows($sql);
         return $affectedRows;
     }
@@ -56,33 +56,38 @@ class ProductManager {
         return $rows;
     }
 
-	public function listProductsByOrder($searchres, $orderby) {
-			$sql = "SELECT id, name, price, storeName, storeAddress, googleMap, image FROM product where name like '%$searchres%' ORDER BY $orderby";
-			$rows = $this->db->query($sql);
-			return $rows;
-	}
-	
-    public function findProduct($SKU) {
-        $params = array(":sku" => $SKU);
-        $sql = "SELECT SKU, item_price, description, path, Quantity FROM product WHERE SKU = :sku";
+    public function listProductsByOrder($searchres, $orderby) {
+       $sql = "SELECT id, name, price, storeName, storeAddress, googleMap, image FROM product where name like '%$searchres%' ORDER BY $orderby";
+       $rows = $this->db->query($sql);
+       return $rows;
+   }
+   public function listDeliveryProducts($searchres) {
+    $sql = "SELECT id, name, price, storeName, storeAddress, googleMap, image FROM product where name like '%$searchres%' AND delivery = 1 ";
+    $rows = $this->db->query($sql);
+    return $rows;
+}
 
-        $rows = $this->db->query($sql, $params);
-        if(count($rows) > 0) {
-            return $rows[0];
-        }
+public function findProduct($SKU) {
+    $params = array(":sku" => $SKU);
+    $sql = "SELECT SKU, item_price, description, path, Quantity FROM product WHERE SKU = :sku";
 
-        return null;
+    $rows = $this->db->query($sql, $params);
+    if(count($rows) > 0) {
+        return $rows[0];
     }
 
+    return null;
+}
 
 
 
 
-		public function listComments($product_id){
-			$sql = "SELECT email, content FROM comments WHERE product_id = $product_id";
-			
-			$rows = $this->db->query($sql);
-			return $rows;
-		}
-	}
+
+public function listComments($product_id){
+   $sql = "SELECT email, content FROM comments WHERE product_id = $product_id";
+   
+   $rows = $this->db->query($sql);
+   return $rows;
+}
+}
 ?>

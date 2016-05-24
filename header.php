@@ -14,6 +14,8 @@
   <script type="text/javascript" src="js/products.js"></script>
 
   <link rel="icon" href="img/favico.png" type="image/x-icon" />
+  <link href="css/bootstrap-tour.min.css" rel="stylesheet">
+  
   
 </head>
 
